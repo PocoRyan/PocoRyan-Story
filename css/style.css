@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.8); /* 白色背景，带透明度 */
+    color: black; /* 字体颜色为黑色 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: opacity 1s ease; /* 添加过渡效果 */
+    z-index: 10;
+}
+
+.overlay.hidden {
+    opacity: 0; /* 隐藏效果 */
+    pointer-events: none; /* 不响应点击 */
+}
+
+header {
+    display: flex;
+    text-align: left;
+    align-items: center;
+    background-color: #030365;
+    padding-left: 2%;
+    height: 100px;
+    color: white;
+}
+
+.story-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#story-1 {
+    background-image: url('https://cdn.pixabay.com/photo/2024/09/03/18/03/desert-9019840_1280.jpg');
+}
+
+#story-2 {
+    background-image: url('https://cdn.pixabay.com/photo/2024/09/06/13/11/beach-9027513_1280.jpg');
+}
+
+#story-3 {
+    background-image: url('https://cdn.pixabay.com/photo/2023/05/17/13/38/lofoten-islands-8000196_1280.jpg');
+}
+
+.content {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    max-width: 600px;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
