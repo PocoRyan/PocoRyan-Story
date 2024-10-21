@@ -1,74 +1,104 @@
+/* Reset basic styling */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth; /* 平滑滚动 */
+}
+
 body {
     font-family: Arial, sans-serif;
     overflow-x: hidden;
+    line-height: 1.6;
 }
 
+/* Overlay Section */
 .overlay {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.8); /* 白色背景，带透明度 */
-    color: black; /* 字体颜色为黑色 */
+    background: rgba(255, 255, 255, 0.9); /* 半透明白色背景 */
+    color: black;
     display: flex;
     justify-content: center;
     align-items: center;
     opacity: 1;
-    transition: opacity 1s ease; /* 添加过渡效果 */
+    transition: opacity 1s ease-in-out; /* 平滑过渡 */
     z-index: 10;
 }
 
 .overlay.hidden {
-    opacity: 0; /* 隐藏效果 */
-    pointer-events: none; /* 不响应点击 */
+    opacity: 0;
+    pointer-events: none; /* 隐藏时不响应点击 */
 }
 
+/* Header Section */
 header {
     display: flex;
-    text-align: left;
     align-items: center;
     background-color: #030365;
-    padding-left: 2%;
-    height: 100px;
+    padding: 0 2%;
+    height: 70px;
     color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 添加阴影 */
 }
 
+header h1 {
+    font-size: 2rem;
+}
+
+/* Story Section */
 .story-section {
-    height: 100vh;
+    height: 110vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: row-reverse;
+    align-items: left;
+    justify-content: left;
     position: relative;
     background-size: cover;
+    background-position: center;
     background-attachment: fixed;
 }
 
 #story-1 {
-    background-image: url('https://cdn.pixabay.com/photo/2024/09/03/18/03/desert-9019840_1280.jpg');
+    background-image: url('../images/bg1.jpg');
 }
 
 #story-2 {
-    background-image: url('https://cdn.pixabay.com/photo/2024/09/06/13/11/beach-9027513_1280.jpg');
+    background-image: url('../images/bg2.jpg');
 }
 
 #story-3 {
-    background-image: url('https://cdn.pixabay.com/photo/2023/05/17/13/38/lofoten-islands-8000196_1280.jpg');
+    background-image: url('../images/bg3.jpg');
+}
+
+#story-4 {
+    background-image: url('../images/bg4.jpg');
+}
+
+#story-5 {
+    background-image: url('../images/bg5.jpg');
+}
+
+#story-6 {
+    background-image: url('../images/bg6.jpg');
 }
 
 .content {
-    background: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 1) 0%,rgba(0,0,0,0.7) 30%,rgba(0,0,0,0.3) 70%, rgba(0, 0, 0, 0) 100%); 
+    padding: 40px 20px;
+    text-align: left;
+    color:white;
+    /* border-radius: 10px; */
     max-width: 600px;
+    /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 添加内容的阴影效果 */
 }
+
 
 h2 {
     font-size: 2.5rem;
@@ -79,10 +109,30 @@ p {
     font-size: 1.2rem;
 }
 
+/* Footer Section */
 footer {
     text-align: center;
     padding: 20px;
     background-color: #333;
     color: white;
+}
+
+/* 增强响应性设计 */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2rem;
+    }
+    
+    p {
+        font-size: 1rem;
+    }
+
+    .content {
+        max-width: 90%;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
 }
 

@@ -1,7 +1,10 @@
-window.addEventListener('load', function() {
+document.addEventListener("DOMContentLoaded", function() {
+    // 获取遮罩层
     const overlay = document.getElementById('overlay');
+
+    // 遮罩层在3秒后逐渐隐藏
     setTimeout(() => {
-        overlay.classList.add('hidden'); // 延迟 1 秒后隐藏覆盖层
-    }, 1000); // 延迟时间可根据需要调整
+        overlay.classList.add('hidden');
+    }, 3000);  // 3秒后隐藏
 });
 
