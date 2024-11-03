@@ -36,4 +36,23 @@ window.addEventListener('resize', () => {
     canvas.width = window.innerWidth; // 窗口调整时更新画布宽度
 });
 
+const img = document.querySelector('.draggable');
+let isDragging = false;
+let offsetX, offsetY;
 
+img.addEventListener('mousedown',(e)=>{
+    isDragging = true;
+    offsetX = e.clientX - img.getBoundingClientRect().left;
+    offsetY = e.clientY - img.getBoundingClientRect().top;
+});
+
+document.addEventListener('mousemove',(e)=>{
+    if (isDragging){
+        img.style.left = (e.clientX - offsetX) + 'px';
+        img.style.top = (e.clientY - offsetY) + 'px';
+    }
+});
+
+document.addEventListener('mouseup',()=>{
+    isDragging = false;
+});

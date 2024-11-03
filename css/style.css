@@ -15,27 +15,7 @@ body {
     line-height: 1.6;
 }
 
-/* Overlay Section */
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(255, 255, 255, 0.9); /* 半透明白色背景 */
-    color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 1;
-    transition: opacity 1s ease-in-out; /* 平滑过渡 */
-    z-index: 10;
-}
 
-.overlay.hidden {
-    opacity: 0;
-    pointer-events: none; /* 隐藏时不响应点击 */
-}
 
 /* Header Section */
 header {
@@ -67,6 +47,7 @@ header h1 {
 
 #story-1 {
     background-image: url('../images/bg1.jpg');
+    justify-content: center;
 }
 
 #story-2 {
@@ -95,7 +76,7 @@ header h1 {
     text-align: left;
     color:white;
     /* border-radius: 10px; */
-    max-width: 600px;
+    max-width: 50%;
     /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 添加内容的阴影效果 */
 }
 
@@ -161,11 +142,43 @@ canvas{
     align-items: center;
 }
 
-.overlay{
+
+.text-content{
+    position: relative;
+    top: 10%;
+    margin-left: 80px;
+}
+
+.container-shadow{
+    box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.10),
+                0px 10px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    transition: box-shadow 0.3s ease;
+    backdrop-filter: blur(10px);
+    background-color: rgba(139, 130, 130, 0.3);
+
+}
+
+.container-shadow:hover{
+    box-shadow: 0px 30px 40px rgba(0, 0, 0, 0.2);
+}
+
+.zoom-image{
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+}
+
+.zoom-image:hover{
+    transform: scale(1.2);
+    box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.4);
+    z-index: 3;
+}
+
+.draggable{
+    cursor: move;
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4) ;
+    width: 230px;
+    height: 400px;
+    bottom: 40%;
+    right: 20%;
 }
