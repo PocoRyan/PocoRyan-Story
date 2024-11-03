@@ -181,4 +181,9 @@ canvas{
     height: 400px;
     bottom: 40%;
     right: 20%;
+    transition: transform 0.3s ease;
+}
+
+.draggable:hover{
+    transform: scale(1.2);
 }
