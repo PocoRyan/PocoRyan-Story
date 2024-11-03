@@ -56,3 +56,25 @@ document.addEventListener('mousemove',(e)=>{
 document.addEventListener('mouseup',()=>{
     isDragging = false;
 });
+
+document.addEventListener("DOMContentLoaded",function() {
+    const section = document.querySelectorAll('.story-section');
+
+    const loadBackgroundImage = (section) => {
+        const bgImage = section.id;
+        section.style.backgroundImage = 'url(${bgImage})';
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                loadBackgroundImage(entry.target);
+                observer.unobserve(entry.target);
+            }
+        });
+    });
+
+    section.forEach(section => {
+        observer.observer(section);
+    });
+});
