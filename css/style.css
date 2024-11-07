@@ -72,11 +72,11 @@ header h1 {
 
 .content {
     background: linear-gradient(to right, rgba(0, 0, 0, 1) 0%,rgba(0,0,0,0.7) 30%,rgba(0,0,0,0.3) 70%, rgba(0, 0, 0, 0) 100%); 
-    padding: 40px 20px;
+    padding: 20px 20px;
     text-align: left;
     color:white;
     /* border-radius: 10px; */
-    max-width: 50%;
+    max-width: 40%;
     /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 添加内容的阴影效果 */
 }
 
